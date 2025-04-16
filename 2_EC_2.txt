@@ -1,0 +1,53 @@
+
+ec-2 service
+-------------
+-> EC2 instance is used to create virtual machines 
+
+
+1) How to create ec2 in aws
+------------------------
+    
+    -> Launch instance 
+    -> Name -> Linux machince name
+    -> create AMI =>Amazon machine Image => 
+            -> Select Linux distributor  - amazonservice , ubantu etc
+            -> Architecture 64 bit
+            -> Instance type -> t2.micro -> gives 0.5GB RAM because free 
+            -> Key pair(private key) -> for security 
+               Note : one key-pair we can use for multiple EC2 instance
+		          the moment when we create the key pair two key are generated
+		           1) public key - store in aws ( this is lock)
+		           2) private key - .pem file - to unlock the lock  
+                -> create key pair if 1st time
+                     -> Name =>give name
+                     -> key-pair type RSA
+                     -> .pem for MobaXtream
+                     -> .ppk for putty
+                     -> create and download
+            -> Network setting 
+               -> firewall security - create security group - allow SSH
+                  SSH - Linux machine runs on SSH protocol
+                  RDP - WIndows machine runs on RDP protocol
+            -> Storage  -> default 8GB
+    -> Launch Instance  - here before we can give number to how many to create VM 
+    -> Instance is created with instance id
+    -> 2 IP address created public and private 
+
+2) details required to connect with MobaXteram
+--------------------------------------------
+       UserName -> ec2-user default
+       ssh-22
+       public-ip
+       .pem 
+
+3) Why not putty to connect with VM 
+---------------------------------------
+  -> In real time we can use putty to connect with VM but it required licence  
+
+ 4) How many types of IP's available in AWS
+  +++++++++++++++++++++++++++++++++++++++++++
+  => 3 types 
+     private IP  => fixed ip address , and used for one machine to another machine communication
+     public IP   => change ip on  every restart of ec2 instance -> and used for content resource sharing 
+     Elastic IP  => fixed ip , instate of public we used elastic ip because not change every time , but commercial
+                    note we need to attch this elastic ip to ec2 instance ip , so first attch then use

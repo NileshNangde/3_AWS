@@ -1,0 +1,82 @@
+Linux     Q) which software you use to connect with Linux machine -> putty software
+++++++      Linux is multiuser OS through private key and user name user can access the OS
+            Project execution happent in the Linux machine omly
+        note : whatever the app we install in linux , they are fully manages servises
+               means no need to start , close , security, backup etcs ,ex : RDS
+
+1) What is Operating System , types 
+  +++++++++++++++++++++++++++++++++
+=> Meaditor between user and computer , to run any application OS is manditory
+   Windows , Linux , Mac are the types of OS
+
+2) Diff between Windows and Linux OS
++++++++++++++++++++++++++++++++++++++
+=> Windows is GUI based OS , less secure and Licence is paid and used for personal purpose ex : gaming , browsing
+=> Linux is CLI based , high secure and free and open source  and used for business purpose ex : server running , database
+
+3) History of Linux
+  +++++++++++++++++++
+=> Initially UNIX OS in market which is CLI based OS and operated by unix team
+-> Linus Torvalds identify some issue in Unix OS but the coorporation not except it changes
+-> Linus make Minux OS LI + NUX = LINUX  LI fron his name and NUX from MINUX
+-> And Linux is open source and free in market -> any organization can make changes in linux and build its own OS they called as Linux distributor
+-> EX: of linux distributor : 200+ distributor
+       Ubuntu Linux
+       Red Hat -linux
+       Amazon linux
+
+4) what is yum , sudo  ,apt
+  +++++++++++++++++++++++++
+   1) sudo : superuser do
+   2) yum  : Yellowdog Updater, Modified
+   3) apt  : Advanced Package Tool
+
+5) How to java application
+  +++++++++++++++++++++++++++
+   -> running java application means running .jar file
+   -> java -jar banking_app.jar
+   -> access the app through the ip -address =>  http://public-ip:8080/
+   -> still we cannot access our app beacuse of firewall security of aws
+      -> go aws login 
+      -> our ec2 instance
+      -> security 
+      -> inbound rule  -> here only ssh (mobaxtream)can access  
+                       -> edit inbount rule -> add rule -> custom
+6) Port mapping and detach mode ( -p and -d)
+  +++++++++++++++++++++++++++++
+   -> port mapping : when 2 port numbers are there and on 1 port number we want to run another port number then port mapping 
+                     ex: -p 8080:8080  ( K8S port number is 8080 and java app port is 8080)
+   -> detach mode  : -d  ( when app run then terminal is running and not open for next cmd then run on detach mode , so terminal is open)
+
+
+Linux cmd
+---------
+1) whoami          : to check user 
+2) ls -l           : list directory 
+   ls -lt          : list directory in reverse order
+   ls ltr          : list directory ,which file create at last list 1st
+3) vi Dockerfile   : to create file and edit and save  :wq (write and quite ) , :q1 ( quite without) press i to insert ,  press esc and then :wq
+4) touch           : to create the empty file
+5) cat Dockerfile  : to open the file
+6) tac Dockerfile  : to open file and content print in reverse order
+7) pwd             : to check present working directory
+8) rm              : to delete file
+9) rmdir           : to delete the directory  : rmdir -r Devops(folder) (r - recersive) note :if directory is not empty then this cmd not work
+10) cp              : copy cmd  : cp m1.txt m2.txt
+11) mv             : to rename file or directory :  mv m1.txt raju.txt
+12) grep           : (global regular expression printer)
+                     to find the specific character , text in the text file
+                     grep 'java' m1.txt
+                     grep -i 'java' m1.txt  -> ignore the case sensitive
+                     grep -i 'java' *       -> where where java keyword present from all files it print
+13) head           : to get top 10 lines from txt file  ex: head m1.txt
+14) tail           : to get bottom 10 lines from txt file
+                     how to get custom lines then
+                     ------------------------------
+                     head -n 13 m1.txt
+Note : amazonlinux machine : userName => ec2-user | yum package manager
+       ubantu machine      : userName => ubantu   | apt package manager
+
+Note : linux tail comd is most important for the developer because : latest log messages are available on bottom of the cmd
+       ex : latest error ,exception at bottom
+                    
